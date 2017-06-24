@@ -21,6 +21,7 @@ gem 'jquery-rails'
 #Api gems
 gem 'active_model_serializers'
 
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -28,6 +29,7 @@ end
 
 group :development do
   gem 'sqlite3'
+  gem 'shoulda-matchers'
 end
 
 group :test do
