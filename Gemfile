@@ -21,6 +21,12 @@ gem 'jquery-rails'
 #Api gems
 gem 'active_model_serializers'
 
+gem 'furatto', github: "IcaliaLabs/furatto-rails"
+gem 'sabisu_rails', github: "IcaliaLabs/sabisu-rails"
+gem 'compass-rails', '~> 2.0'
+gem 'font-awesome-rails'
+gem 'simple_form'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
