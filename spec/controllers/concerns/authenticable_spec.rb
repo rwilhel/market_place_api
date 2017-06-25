@@ -35,4 +35,6 @@ describe Authenticable do
 
     it { should respond_with 401 }
   end
+
+  
 end
