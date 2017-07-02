@@ -8,8 +8,8 @@ describe Api::V1::UsersController do
     end
 
     it "returns the information about a reporter on a hash" do
-      user_response = json_response
-      expect(user_response[:email]).to eql @user.email
+      user_response = json_response[:user]
+      expect(user_response[:email]).to eq @user.email
     end
 
     it { should respond_with 200 }
@@ -96,7 +96,7 @@ describe Api::V1::UsersController do
     before(:each) do
       @user = FactoryGirl.create :user
       api_authorization_header @user.auth_token
-      delete :destroy, id: @user.auth_token 
+      delete :destroy, id: @user.auth_token
     end
 
     it { should respond_with 204 }

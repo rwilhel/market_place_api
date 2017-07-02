@@ -39,7 +39,7 @@ end
 
 describe "#products association" do
   before { @user = FactoryGirl.build(:user) }
-  
+
   before do
     @user.save
     3.times { FactoryGirl.create :product, user: @user }
