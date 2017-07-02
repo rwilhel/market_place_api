@@ -44,6 +44,7 @@ group :test do
   gem 'ffaker'
   gem 'test-unit'
   gem 'shoulda-matchers'
+  gem 'pry'
 end
 
 gem "devise"
