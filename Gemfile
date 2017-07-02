@@ -19,7 +19,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 #Api gems
-gem 'active_model_serializers'
+gem 'active_model_serializers', '0.8.3'
 
 gem 'furatto', github: "IcaliaLabs/furatto-rails"
 gem 'sabisu_rails', github: "IcaliaLabs/sabisu-rails"

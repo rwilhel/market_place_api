@@ -24,7 +24,7 @@ describe Api::V1::ProductsController do
     it "returns 4 records from the database" do
       products_response = json_response
 
-      expect(products_response.count).to eq(4)
+      expect(products_response[:products].count).to eq(4)
     end
 
       it { should respond_with 200 }
