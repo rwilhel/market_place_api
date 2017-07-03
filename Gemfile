@@ -26,6 +26,7 @@ gem 'sabisu_rails', github: "IcaliaLabs/sabisu-rails"
 gem 'compass-rails', '~> 2.0'
 gem 'font-awesome-rails'
 gem 'simple_form'
+gem 'rake', '< 11.0'
 
 
 group :doc do
