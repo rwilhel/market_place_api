@@ -36,7 +36,6 @@ end
 
 group :development do
   gem 'sqlite3'
-  gem 'shoulda-matchers'
 end
 
 group :development, :test do
