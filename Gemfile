@@ -48,6 +48,7 @@ group :test do
   gem 'test-unit'
   gem 'shoulda-matchers'
   gem 'pry'
+  gem 'email_spec' 
 end
 
 gem "devise"
