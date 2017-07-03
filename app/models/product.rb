@@ -5,6 +5,9 @@ class Product < ActiveRecord::Base
 
   belongs_to :user
 
+  has_many :placements
+  has_many :orders, through: :placements 
+
   scope :filter_by_title, lambda { |keyword|
     where("lower(title) LIKE ?", "%#{keyword.downcase}%" )
   }
@@ -29,6 +32,6 @@ class Product < ActiveRecord::Base
     products = products.below_or_equal_to_price(params[:max_price].to_f) if params[:max_price]
     products = products.recent(params[:recent]) if params[:recent].present?
 
-    products 
+    products
   end
 end
