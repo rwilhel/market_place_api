@@ -8,4 +8,8 @@ class Product < ActiveRecord::Base
   scope :filter_by_title, lambda { |keyword|
     where("lower(title) LIKE ?", "%#{keyword.downcase}%" )
   }
+
+  scope :above_or_equal_to_price, lambda { |price|
+    where("price>= ?", price)
+  }
 end
