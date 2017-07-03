@@ -58,7 +58,7 @@ describe Api::V1::ProductsController do
         products_response = json_response[:products]
         products_response.each do |product_response|
           expect(product_response[:user][:email]).to eq @user.email
-        end 
+        end
       end
     end
   end

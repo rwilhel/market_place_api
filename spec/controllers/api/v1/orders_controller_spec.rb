@@ -33,4 +33,23 @@ describe Api::V1::OrdersController do
 
     it { should respond_with 200 }
   end
+
+  describe "POST #create" do
+    before(:each) do
+      current_user = FactoryGirl.create :user
+      api_authorization_header current_user.auth_token
+
+      product1 = FactoryGirl.create :product
+      product2 = FactoryGirl.create :product
+      order_params = { product_ids: [product1.id, product2.id] }
+      post :create, user_id: current_user.id, order: order_params
+    end
+
+    it "returns the recent user order record" do
+      order_response = json_response[:order]
+      expect(order_response[:id]).to be_present
+    end
+
+    it { should respond_with 201 }
+  end
 end
