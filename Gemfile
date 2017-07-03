@@ -27,6 +27,7 @@ gem 'compass-rails', '~> 2.0'
 gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'rake', '< 11.0'
+gem 'kaminari' 
 
 
 group :doc do
@@ -48,7 +49,7 @@ group :test do
   gem 'test-unit'
   gem 'shoulda-matchers'
   gem 'pry'
-  gem 'email_spec' 
+  gem 'email_spec'
 end
 
 gem "devise"

@@ -6,7 +6,7 @@ class Product < ActiveRecord::Base
   belongs_to :user
 
   has_many :placements
-  has_many :orders, through: :placements 
+  has_many :orders, through: :placements
 
   scope :filter_by_title, lambda { |keyword|
     where("lower(title) LIKE ?", "%#{keyword.downcase}%" )
@@ -25,7 +25,7 @@ class Product < ActiveRecord::Base
   }
 
   def self.search(params = {})
-    products = params[:product_ids].present? ? Product.find(params[:product_ids]) : Product.all
+    products = params[:product_ids].present? ? Product.where(id: params[:product_ids]) : Product.all
 
     products = products.filter_by_title(params[:keyword]) if params[:keyword]
     products = products.above_or_equal_to_price(params[:min_price].to_f) if params[:min_price]
