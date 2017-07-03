@@ -19,11 +19,17 @@ describe Order do
       product1 = FactoryGirl.create :product, price: 100
       product2 = FactoryGirl.create :product, price: 85
 
-      @order = FactoryGirl.build :order, product_ids: [product1.id, product2.id]
+      placement1 = FactoryGirl.build :placement, product: product1, quantity: 3
+      placement2 = FactoryGirl.build :placement, product: product2, quantity: 15
+
+      @order = FactoryGirl.build :order
+
+      @order.placements << placement1
+      @order.placements << placement2
     end
 
     it "returns the total amount for all products" do
-      expect{@order.set_total!}.to change{@order.total}.from(0).to(185)
+      expect{@order.set_total!}.to change{@order.total.to_f}.from(0).to(1575)
     end
   end
 
