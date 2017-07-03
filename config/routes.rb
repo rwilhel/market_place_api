@@ -8,6 +8,7 @@ MarketPlaceApi::Application.routes.draw do
               constraints: ApiConstraints.new(version: 1, default: true) do
       resources :users, only: [:show, :create, :update, :destroy] do
         resources :products, only: [:create, :update, :destroy]
+        resources :orders, only: [:index]
       end
       devise_for :users
       resources :sessions, only: [:create, :destroy]
